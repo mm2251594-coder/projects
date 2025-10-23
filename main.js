@@ -135,7 +135,7 @@ const eventsData = [
         date: "2026-05-22",
         location: "مديرية الثقافة",
         description: "عرض للحرف اليدوية التقليدية السورية من فنون الزجاج والنحاس والتطريز.",
-        image: "https://i.pinimg.com/736x/2a/ea/33/2aea33552c72ffcdae2f5b8b826684c1.jpg",
+        image: "https://i.pinimg.com/1200x/29/1f/ed/291fed27d9eb0b8f520b778dad94da76.jpg",
         featured: false,
         organizer: "جمعية الحرف اليدوية",
         contact: "crafts@damascus.com",
