@@ -1,0 +1,847 @@
+/* متغيرات الألوان للوضعين الفاتح والداكن */
+:root {
+    --primary: #13c5c5;
+    --primary-dark: #0fa3a3;
+    --secondary: #b70929;
+    --accent: #f72585;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --gray: #6c757d;
+    --success: #4cc9f0;
+    --warning: #f8961e;
+    --danger: #e63946;
+    
+    /* ألوان الوضع الليلي */
+    --dark-bg: #121212;
+    --dark-card: #1e1e1e;
+    --dark-text: #e0e0e0;
+    --dark-border: #333333;
+    --dark-muted: #a0a0a0;
+}
+
+/* تنسيقات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    padding-top: 80px;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+/* شريط التنقل */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    background: white !important;
+    padding: 0.5rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.logo-container {
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.brand-text {
+    color: var(--primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* مجموعة التحكم - توضع في أقصى اليسار */
+.navbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 1;
+    margin-left: auto;
+}
+
+/* أزرار اللغة */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lang-switch .btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border: 2px solid var(--primary);
+}
+
+.lang-switch .btn:hover {
+    transform: scale(1.05);
+}
+
+.lang-switch .btn.active {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.lang-switch .btn:not(.active) {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+/* زر الوضع الليلي - بدون نص */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    position: relative;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* تلميح عند التحويم (اختياري) */
+.theme-toggle:hover::after {
+    content: "تبديل الوضع الليلي";
+    position: absolute;
+    top: -40px;
+    right: 50%;
+    transform: translateX(50%);
+    background: var(--dark);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* للوضع الداكن */
+body.dark-mode .theme-toggle:hover::after {
+    background: var(--light);
+    color: var(--dark);
+}
+
+/* القائمة - توضع في المنتصف */
+.navbar-collapse {
+    order: 2;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar-nav .nav-item {
+    margin: 0 8px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
+    color: var(--dark) !important;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+    background: rgba(19, 197, 197, 0.1);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* زر القائمة للجوال */
+.navbar-toggler {
+    order: 3;
+    border: 2px solid var(--primary);
+    padding: 6px 10px;
+    margin-right: 10px;
+    
+}
+/* ========== أيقونة القائمة في الوضع الليلي ========== */
+body.dark-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* إطار الأيقونة أبيض أيضاً في الوضع الليلي */
+body.dark-mode .navbar-toggler {
+    border-color: white !important;
+}
+
+/* للتأكد من ظهور التغييرات على الشاشات الصغيرة */
+@media (max-width: 991px) {
+    body.dark-mode .navbar-toggler {
+        border-color: white !important;
+    }
+    
+    body.dark-mode .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+}
+
+/* ========== الوضع الليلي المحسن ========== */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .navbar {
+    background-color: var(--dark-card) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .brand-text {
+    color: var(--dark-text);
+}
+
+body.dark-mode .nav-link {
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    color: var(--primary) !important;
+    background: rgba(19, 197, 197, 0.15);
+}
+
+/* البطاقات في الوضع الداكن */
+body.dark-mode .event-card,
+body.dark-mode .category-card,
+body.dark-mode .info-card,
+body.dark-mode .sidebar-card,
+body.dark-mode .team-card,
+body.dark-mode .contact-info-card {
+    background: var(--dark-card) !important;
+    border: 1px solid var(--dark-border) !important;
+    color: var(--dark-text) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .event-title,
+body.dark-mode .category-card h4,
+body.dark-mode .info-card h5,
+body.dark-mode .sidebar-card h4,
+body.dark-mode .sidebar-card h6,
+body.dark-mode .team-card .card-title,
+body.dark-mode .contact-info-card h4 {
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .event-description,
+body.dark-mode .category-card p,
+body.dark-mode .info-card p,
+body.dark-mode .team-card .card-text,
+body.dark-mode .contact-info-card p {
+    color: var(--dark-muted) !important;
+}
+
+body.dark-mode .bg-light {
+    background-color: var(--dark-card) !important;
+}
+
+body.dark-mode .footer {
+    background: var(--dark-bg) !important;
+    border-top: 1px solid var(--dark-border);
+}
+
+body.dark-mode .form-control {
+    background-color: var(--dark-card);
+    border-color: var(--dark-border);
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: var(--dark-muted) !important;
+}
+
+body.dark-mode .text-muted {
+    color: var(--dark-muted) !important;
+}
+
+body.dark-mode .lead {
+    color: var(--dark-text) !important;
+}
+
+body.dark-mode .card {
+    background-color: var(--dark-card);
+    border-color: var(--dark-border);
+}
+
+body.dark-mode .card-body {
+    color: var(--dark-text);
+}
+
+body.dark-mode .section-title {
+    color: var(--dark-text);
+}
+
+body.dark-mode .hero-section {
+    background: linear-gradient(135deg, #0a0a2a 0%, #0d0d3d 100%);
+}
+
+body.dark-mode .newsletter-section {
+    background: linear-gradient(135deg, #2a0a3a 0%, #1d0252 100%);
+}
+
+body.dark-mode .team-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+body.dark-mode .event-section.bg-light {
+    background: var(--dark-card) !important;
+}
+
+/* قسم البطل */
+.hero-section {
+    background: linear-gradient(135deg, #03065a 0%, #190884 100%);
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.min-vh-80 {
+    min-height: 80vh;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hero-buttons .btn {
+    margin-left: 15px;
+    margin-bottom: 10px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.hero-image img {
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.02);
+}
+
+/* عناوين الأقسام */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--dark);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+.text-center .section-title::after {
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.section-subtitle {
+    color: var(--gray);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* بطاقات الفعاليات */
+.event-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    background: white;
+    height: 100%;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.event-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.1);
+}
+
+.event-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: white;
+    z-index: 2;
+    font-weight: 600;
+}
+
+.event-content {
+    padding: 1.5rem;
+}
+
+.event-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark);
+    line-height: 1.4;
+}
+
+.event-description {
+    color: var(--gray);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.event-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--gray);
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+/* بطاقات التصنيفات */
+.category-card {
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    margin: 0 auto 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.1);
+}
+
+.category-icon.music { background: var(--accent); }
+.category-icon.sports { background: var(--success); }
+.category-icon.food { background: var(--warning); }
+.category-icon.art { background: var(--secondary); }
+
+.category-card h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.category-card p {
+    color: var(--gray);
+    margin-bottom: 15px;
+}
+
+/* قسم النشرة البريدية */
+.newsletter-section {
+    background: linear-gradient(135deg, #470a61 0%, #2e0391 100%);
+}
+
+.newsletter-section h3 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.newsletter-section p {
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.newsletter-form .form-control {
+    border: none;
+    border-radius: 30px 0 0 30px;
+    padding: 15px 20px;
+    font-size: 1rem;
+}
+
+.newsletter-form .btn {
+    border-radius: 0 30px 30px 0;
+    padding: 15px 30px;
+    font-weight: 600;
+}
+
+/* التذييل */
+.footer {
+    background: var(--dark);
+    color: white;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.footer-description {
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.footer h5 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: var(--primary);
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    margin-left: 10px;
+    transition: all 0.3s;
+    color: white;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #b0b0b0;
+}
+
+.contact-info i {
+    width: 20px;
+    color: var(--primary);
+}
+
+/* إشعارات */
+.theme-switch-notification,
+.language-switch-notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.theme-switch-notification.show,
+.language-switch-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* قسم فريق العمل */
+.team-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.team-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.team-item {
+    transition: all 0.3s ease;
+    border-left: 4px solid var(--primary);
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.team-item:hover {
+    transform: translateX(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.team-name {
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 1.2rem;
+}
+
+/* أزرار */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.filter-btn {
+    margin: 0 5px 5px 0;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* تحسينات للشاشات المتوسطة */
+@media (max-width: 991px) {
+    .navbar .container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    .navbar-brand {
+        order: 1;
+        flex-grow: 0;
+    }
+    
+    .navbar-controls {
+        order: 2;
+        margin-left: auto;
+    }
+    
+    .navbar-toggler {
+        order: 3;
+    }
+    
+    .navbar-collapse {
+        order: 4;
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-link {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+    
+    .event-card,
+    .category-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .event-image {
+        height: 150px;
+    }
+    
+    .hero-section {
+        padding: 80px 0;
+    }
+    
+    .navbar-controls {
+        gap: 5px;
+    }
+    
+    .lang-switch .btn {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .theme-toggle {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .navbar-brand .brand-text {
+        font-size: 1rem;
+    }
+}

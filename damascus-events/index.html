@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل فعاليات المدينة</title>
+    <!-- Bootstrap CSS RTL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل باستخدام Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <!-- العلامة التجارية على اليمين -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-container me-2">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <span class="brand-text site-title" data-translate="siteTitle">دليل فعاليات المدينة</span>
+            </a>
+
+            <!-- أزرار التحكم على اليسار -->
+            <div class="navbar-controls">
+                <!-- أزرار الترجمة -->
+                <div class="lang-switch d-flex align-items-center">
+                    <button id="langAr" class="btn btn-sm btn-outline-secondary me-1">🇸🇾</button>
+                    <button id="langEn" class="btn btn-sm btn-outline-secondary">🇺🇸</button>
+                </div>
+
+                <!-- زر الوضع الليلي (بدون نص) -->
+                <button class="theme-toggle" id="themeToggle" title="تبديل الوضع الليلي">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- زر القائمة للجوال -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- القائمة في المنتصف -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html" data-translate="home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html" data-translate="events">الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-translate="about">عن الدليل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" data-translate="contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- قسم الهيرو الرئيسي -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-80">
+                <div class="col-lg-6">
+                    <h1 class="hero-title" data-translate="discoverEvents">اكتشف أفضل الفعاليات في مدينتك</h1>
+                    <p class="hero-subtitle" data-translate="comprehensiveGuide">دليلك الشامل لأهم الأحداث الثقافية، الرياضية، الموسيقية والعائلية القادمة في العاصمة دمشق</p>
+                    <div class="hero-buttons">
+                        <a href="events.html" class="btn btn-primary btn-lg" data-translate="exploreEvents">استكشف الفعاليات</a>
+                        <a href="#quick-event" class="btn btn-outline-primary btn-lg" data-translate="quickCategories">التصنيف السريع</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="حفل موسيقي" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الفعاليات البارزة -->
+    <section id="featured-events" class="featured-events py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title" data-translate="featuredEvents">فعاليات بارزة هذا الأسبوع</h2>
+                    <p class="section-subtitle" data-translate="dontMiss">أهم الأحداث التي لا يجب أن تفوتها</p>
+                </div>
+            </div>
+            <div class="row g-4" id="featuredEventsGrid">
+                <!-- JavaScript سيقوم بتحميل الفعاليات هنا -->
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التصنيفات السريعة -->
+    <section id="quick-event" class="event-section py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title" data-translate="quickCategories">التصنيف السريع</h2>
+                    <p class="section-subtitle">اضغط على التصنيف لعرض الفعاليات فوراً</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6">
+                    <div class="category-card text-center" onclick="showCategoryEvents('موسيقى')" style="cursor: pointer;">
+                        <div class="category-icon music">
+                            <i class="fas fa-guitar"></i>
+                        </div>
+                        <h4 data-translate="music">موسيقى</h4>
+                        <p>حفلات ومهرجانات موسيقية</p>
+                        <span class="badge bg-primary" id="موسيقى-count">2 فعالية</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="category-card text-center" onclick="showCategoryEvents('رياضة')" style="cursor: pointer;">
+                        <div class="category-icon sports">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <h4 data-translate="sports">رياضة</h4>
+                        <p>مسابقات وأنشطة رياضية</p>
+                        <span class="badge bg-primary" id="رياضة-count">2 فعالية</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="category-card text-center" onclick="showCategoryEvents('طعام')" style="cursor: pointer;">
+                        <div class="category-icon food">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4 data-translate="food">طعام</h4>
+                        <p>مهرجانات الطعام والذواقة</p>
+                        <span class="badge bg-primary" id="طعام-count">2 فعالية</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="category-card text-center" onclick="showCategoryEvents('فنون')" style="cursor: pointer;">
+                        <div class="category-icon art">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4 data-translate="arts">فنون</h4>
+                        <p>معارض وورش فنية</p>
+                        <span class="badge bg-primary" id="فنون-count">2 فعالية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم عرض الفعاليات حسب التصنيف -->
+    <section id="category-events" class="category-events py-5" style="display: none;">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="section-title" id="category-title">فعاليات التصنيف</h2>
+                    <button class="btn btn-outline-secondary mt-3" onclick="hideCategoryEvents()">
+                        <i class="fas fa-arrow-right me-2"></i>العودة للتصنيفات
+                    </button>
+                </div>
+            </div>
+            <div class="row g-4" id="categoryEventsGrid">
+                <!-- JavaScript سيقوم بتحميل الفعاليات هنا -->
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم أحدث الفعاليات -->
+    <section class="latest-events py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title" data-translate="latestEvents">أحدث الفعاليات</h2>
+                    <p class="section-subtitle" data-translate="discoverNew">اكتشف الجديد في عالم الفعاليات</p>
+                </div>
+            </div>
+            <div class="row g-4" id="latestEventsGrid">
+                <!-- JavaScript سيقوم بتحميل الفعاليات هنا -->
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <a href="events.html" class="btn btn-outline-primary btn-lg" data-translate="viewAllEvents">عرض جميع الفعاليات</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم فريق العمل -->
+    <section class="team-section py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title" data-translate="stayUpdated">ابقى على اطلاع بأخر الفعاليات والعروض الخاصة</h2>
+                    <p class="section-subtitle" data-translate="ourTeam">فريقنا المتخصص يضمن لك الحصول على أفضل التجارب</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="team-list">
+                        <div class="team-item p-3 mb-2 bg-white rounded shadow-sm text-center">
+                            <span class="team-name">Sarah_272059</span>
+                        </div>
+                        <div class="team-item p-3 mb-2 bg-white rounded shadow-sm text-center">
+                            <span class="team-name">mai_287546</span>
+                        </div>
+                        <div class="team-item p-3 mb-2 bg-white rounded shadow-sm text-center">
+                            <span class="team-name">bisan_266673</span>
+                        </div>
+                        <div class="team-item p-3 mb-2 bg-white rounded shadow-sm text-center">
+                            <span class="team-name">Mhd_mahdi_313576</span>
+                        </div>
+                        <div class="team-item p-3 mb-2 bg-white rounded shadow-sm text-center">
+                            <span class="team-name">Bayan_275726</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم النشرة البريدية -->
+    <section class="newsletter-section py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h3 data-translate="subscribeNewsletter">اشترك في نشرتنا البريدية</h3>
+                    <p data-translate="stayInformed">ابق على اطلاع بآخر الفعاليات والعروض الخاصة</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" data-translate="yourEmail" data-placeholder="true" placeholder="بريدك الإلكتروني" required>
+                            <button class="btn btn-light" type="submit" data-translate="subscribe">اشتراك</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer class="footer bg-dark text-light pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand mb-3">
+                        <div class="logo-container me-2">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <span class="brand-text" data-translate="siteTitle">دليل فعاليات المدينة</span>
+                    </div>
+                    <p class="footer-description" data-translate="platformDescription">
+                        منصة شاملة لاكتشاف واستكشاف الفعاليات والأنشطة في مدينتك. نحن نعمل على جمع كل الفعاليات في مكان واحد لتسهيل عملية البحث والمشاركة.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 data-translate="quickLinks">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" data-translate="home">الرئيسية</a></li>
+                        <li><a href="events.html" data-translate="events">الفعاليات</a></li>
+                        <li><a href="about.html" data-translate="about">عن الدليل</a></li>
+                        <li><a href="contact.html" data-translate="contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 data-translate="categories">التصنيفات</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="events.html?category=موسيقى" data-translate="music">موسيقى</a></li>
+                        <li><a href="events.html?category=رياضة" data-translate="sports">رياضة</a></li>
+                        <li><a href="events.html?category=طعام" data-translate="food">طعام</a></li>
+                        <li><a href="events.html?category=فنون" data-translate="arts">فنون</a></li>
+                        <li><a href="events.html?category=ثقافة" data-translate="culture">ثقافة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 data-translate="contactInfo">معلومات الاتصال</h5>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="fas fa-map-marker-alt me-2"></i><span data-translate="damascusSyria">دمشق، سوريا</span></li>
+                        <li><i class="fas fa-phone me-2"></i>+963 11 123 4567</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@damascusevents.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0" data-translate="rightsReserved">© 2024 دليل فعاليات دمشق. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" data-translate="privacyPolicy">سياسة الخصوصية</a></li>
+                        <li class="list-inline-item"><a href="#" data-translate="termsOfUse">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript الرئيسي -->
+    <script src="main.js"></script>
+</body>
+</html>
