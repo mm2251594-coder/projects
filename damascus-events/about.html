@@ -1,238 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-translate="aboutGuide">عن الدليل - دليل فعاليات المدينة</title>
-  <!-- Bootstrap CSS RTL -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    .team-card {
-      transition: transform 0.3s ease;
-      background: #ffffff;
-      border: 1px solid #e9ecef;
-    }
-    .team-card:hover {
-      transform: translateY(-5px);
-    }
-    .hover-effect {
-      transition: transform 0.3s ease;
-    }
-    .hover-effect:hover {
-      transform: scale(1.03);
-    }
-  </style>
-</head>
-<body>
-  <!-- شريط التنقل باستخدام Bootstrap -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-    <div class="container">
-      <!-- العلامة التجارية على اليمين -->
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <div class="logo-container me-2"><i class="fas fa-calendar-alt"></i></div>
-        <span class="brand-text site-title" data-translate="siteTitle">دليل فعاليات المدينة</span>
-      </a>
-
-      <!-- أزرار التحكم على اليسار -->
-      <div class="navbar-controls">
-        <!-- أزرار الترجمة -->
-        <div class="lang-switch d-flex align-items-center">
-          <button id="langAr" class="btn btn-sm btn-outline-secondary me-1">🇸🇾</button>
-          <button id="langEn" class="btn btn-sm btn-outline-secondary">🇺🇸</button>
-        </div>
-
-        <!-- زر الوضع الليلي (بدون نص) -->
-        <button class="theme-toggle" id="themeToggle" title="تبديل الوضع الليلي">
-          <i class="fas fa-moon"></i>
-        </button>
-      </div>
-
-      <!-- زر القائمة للجوال -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- القائمة في المنتصف -->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html" data-translate="home">الرئيسية</a></li>
-          <li class="nav-item"><a class="nav-link" href="events.html" data-translate="events">الفعاليات</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html" data-translate="about">عن الدليل</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html" data-translate="contact">اتصل بنا</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- قسم العنوان الرئيسي -->
-  <section class="text-center pt-4" style="margin-top:90px;">
-    <a href="#about-guide" class="btn btn-outline-primary rounded-pill px-4 py-2 shadow-sm" data-translate="aboutGuide">عن دليل فعاليات المدينة</a>
-  </section>
-
-  <!-- قسم الرؤية والرسالة -->
-  <section id="about-guide" class="mb-5 pt-5 mt-4 text-center">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 text-center">
-          <img src="https://www.arabicmagazine.net/Images/Articles/20204217243056.jpg" 
-               class="img-fluid rounded shadow-lg hover-effect" 
-               style="width:80%;max-height:500px;object-fit:cover;"
-               alt="عن دليل فعاليات المدينة">
-        </div>
-        <div class="col-md-6 text-md-start mt-4 mt-md-0">
-          <h2 class="text-primary fw-bold mb-3" style="font-size:1.8rem;" data-translate="ourVision">رؤيتنا</h2>
-          <p class="lead" data-translate="visionText">أن نكون الوجهة الرقمية الأولى التي تجمع نبض المدينة الثقافي والاجتماعي في مكان واحد.</p>
-          <h2 class="text-primary fw-bold mt-5 mb-3" style="font-size:1.8rem;" data-translate="ourMission">رسالتنا</h2>
-          <p class="lead" data-translate="missionText">تسهيل الوصول للفعاليات ودعم المنظمين وتعزيز تفاعل المجتمع.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- قسم فريق العمل -->
-  <section class="mb-5 py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4 section-title" data-translate="ourTeam">فريق العمل</h2>
-      <div class="row text-center">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 team-card shadow-sm">
-            <img src="https://i.pinimg.com/736x/65/b2/5a/65b25af1f41952e7a2e4cfd72d5b0677.jpg" 
-                 class="card-img-top rounded-circle w-50 mx-auto mt-3 hover-effect" 
-                 alt="محمد - واجهة أمامية">
-            <div class="card-body">
-              <h5 class="card-title">محمد</h5>
-              <p class="card-text" data-translate="frontend">واجهة أمامية</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 team-card shadow-sm">
-            <img src="https://i.pinimg.com/1200x/0c/ae/a3/0caea33f611242a24062b065c2794b75.jpg" 
-                 class="card-img-top rounded-circle w-50 mx-auto mt-3 hover-effect" 
-                 alt="أحمد - مصمم بصري">
-            <div class="card-body">
-              <h5 class="card-title">أحمد</h5>
-              <p class="card-text" data-translate="designer">مصمم بصري</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 team-card shadow-sm">
-            <img src="https://i.pinimg.com/1200x/d7/db/f8/d7dbf8bdb3c43c3aa46cd7ca9baa916d.jpg" 
-                 class="card-img-top rounded-circle w-50 mx-auto mt-3 hover-effect" 
-                 alt="كرم - منسق محتوى">
-            <div class="card-body">
-              <h5 class="card-title">كرم</h5>
-              <p class="card-text" data-translate="contentManager">منسق محتوى</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- قسم القيم -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="section-title mb-4" data-translate="ourValues">قيمنا</h2>
-          <div class="row">
-            <div class="col-md-4 mb-4">
-              <div class="p-4 rounded shadow-sm h-100">
-                <i class="fas fa-users fa-2x text-primary mb-3"></i>
-                <h4 data-translate="communityFirst">المجتمع أولاً</h4>
-                <p data-translate="communityText">نضع احتياجات المجتمع ومشاركته في صلب اهتماماتنا</p>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="p-4 rounded shadow-sm h-100">
-                <i class="fas fa-lightbulb fa-2x text-primary mb-3"></i>
-                <h4 data-translate="innovation">الابتكار</h4>
-                <p data-translate="innovationText">نسعى دائماً لتقديم حلول مبتكرة ومميزة</p>
-              </div>
-            </div>
-            <div class="col-md-4 mb-4">
-              <div class="p-4 rounded shadow-sm h-100">
-                <i class="fas fa-handshake fa-2x text-primary mb-3"></i>
-                <h4 data-translate="collaboration">التعاون</h4>
-                <p data-translate="collaborationText">نؤمن بقوة العمل الجماعي والتعاون البناء</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- التذييل -->
-  <footer class="footer bg-dark text-light pt-5">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6">
-                <div class="footer-brand mb-3">
-                    <div class="logo-container me-2">
-                        <i class="fas fa-calendar-alt"></i>
-                    </div>
-                    <span class="brand-text" data-translate="siteTitle">دليل فعاليات المدينة</span>
-                </div>
-                <p class="footer-description" data-translate="platformDescription">
-                    منصة شاملة لاكتشاف واستكشاف الفعاليات والأنشطة في مدينتك. نحن نعمل على جمع كل الفعاليات في مكان واحد لتسهيل عملية البحث والمشاركة.
-                </p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <h5 data-translate="quickLinks">روابط سريعة</h5>
-                <ul class="list-unstyled">
-                    <li><a href="index.html" data-translate="home">الرئيسية</a></li>
-                    <li><a href="events.html" data-translate="events">الفعاليات</a></li>
-                    <li><a href="about.html" data-translate="about">عن الدليل</a></li>
-                    <li><a href="contact.html" data-translate="contact">اتصل بنا</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 data-translate="categories">التصنيفات</h5>
-                <ul class="list-unstyled">
-                    <li><a href="events.html?category=موسيقى" data-translate="music">موسيقى</a></li>
-                    <li><a href="events.html?category=رياضة" data-translate="sports">رياضة</a></li>
-                    <li><a href="events.html?category=طعام" data-translate="food">طعام</a></li>
-                    <li><a href="events.html?category=فنون" data-translate="arts">فنون</a></li>
-                    <li><a href="events.html?category=ثقافة" data-translate="culture">ثقافة</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 data-translate="contactInfo">معلومات الاتصال</h5>
-                <ul class="list-unstyled contact-info">
-                    <li><i class="fas fa-map-marker-alt me-2"></i><span data-translate="damascusSyria">دمشق، سوريا</span></li>
-                    <li><i class="fas fa-phone me-2"></i>+963 11 123 4567</li>
-                    <li><i class="fas fa-envelope me-2"></i>info@damascusevents.com</li>
-                </ul>
-            </div>
-        </div>
-        <hr class="my-4">
-        <div class="row">
-            <div class="col-md-6">
-                <p class="mb-0" data-translate="rightsReserved">© 2024 دليل فعاليات دمشق. جميع الحقوق محفوظة.</p>
-            </div>
-            <div class="col-md-6 text-md-end">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><a href="#" data-translate="privacyPolicy">سياسة الخصوصية</a></li>
-                    <li class="list-inline-item"><a href="#" data-translate="termsOfUse">شروط الاستخدام</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-  <script src="main.js"></script>
-</body>
-</html>
