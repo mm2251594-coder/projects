@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="eventDetails">تفاصيل الفعالية - دليل فعاليات المدينة</title>
+    <!-- Bootstrap CSS RTL -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل باستخدام Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <!-- العلامة التجارية على اليمين -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="logo-container me-2">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <span class="brand-text site-title" data-translate="siteTitle">دليل فعاليات المدينة</span>
+            </a>
+
+            <!-- أزرار التحكم على اليسار -->
+            <div class="navbar-controls">
+                <!-- أزرار الترجمة -->
+                <div class="lang-switch d-flex align-items-center">
+    <button id="langAr" class="btn btn-sm btn-outline-secondary me-1">SY</button>
+    <button id="langEn" class="btn btn-sm btn-outline-secondary">US</button>
+             </div>
+
+                <!-- زر الوضع الليلي (بدون نص) -->
+                <button class="theme-toggle" id="themeToggle" title="تبديل الوضع الليلي">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- زر القائمة للجوال -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- القائمة في المنتصف -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html" data-translate="home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html" data-translate="events">الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="event.html" data-translate="eventDetails">التفاصيل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-translate="about">عن الدليل</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html" data-translate="contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- محتوى صفحة تفاصيل الفعالية -->
+    <section class="py-5" style="padding-top: 120px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- زر العودة باستخدام Bootstrap -->
+                    <a href="events.html" class="btn btn-outline-primary mb-4" data-translate="backToEvents">
+                        <i class="fas fa-arrow-right me-2"></i>العودة للفعاليات
+                    </a>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- القسم الرئيسي للفعالية -->
+                <div class="col-lg-8">
+                    <div class="event-detail-image mb-4">
+                        <img id="eventDetailImage" src="" alt="صورة الفعالية" class="img-fluid rounded shadow w-100" style="height: 400px; object-fit: cover;">
+                    </div>
+                    
+                    <!-- محتوى تفاصيل الفعالية -->
+                    <div class="event-detail-content">
+                        <h1 id="eventDetailTitle" class="mb-3">جاري تحميل الفعالية...</h1>
+                        <p id="eventDetailDescription" class="lead mb-4">جاري تحميل تفاصيل الفعالية...</p>
+                        
+                        <!-- معلومات الفعالية في شبكة Bootstrap -->
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="info-card p-3 bg-light rounded mb-3">
+                                    <h5><i class="fas fa-calendar-alt me-2 text-primary"></i><span data-translate="dateTime">التاريخ والوقت</span></h5>
+                                    <p id="eventDetailDate" class="mb-0">جاري التحميل...</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card p-3 bg-light rounded mb-3">
+                                    <h5><i class="fas fa-map-marker-alt me-2 text-primary"></i><span data-translate="location">الموقع</span></h5>
+                                    <p id="eventDetailLocation" class="mb-0">جاري التحميل...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- معلومات إضافية -->
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="info-card p-3 bg-light rounded mb-3">
+                                    <h5><i class="fas fa-tags me-2 text-primary"></i><span data-translate="category">التصنيف</span></h5>
+                                    <p id="eventDetailCategory" class="mb-0">جاري التحميل...</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card p-3 bg-light rounded mb-3">
+                                    <h5><i class="fas fa-users me-2 text-primary"></i><span data-translate="expectedAttendance">الحضور المتوقع</span></h5>
+                                    <p id="eventDetailAttendance" class="mb-0" data-translate="openToAll">مفتوح للجميع</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- معرض صور الموقع -->
+                        <div class="location-gallery mb-5">
+                            <h4 class="mb-3" data-translate="locationGallery">موقع الفعالية</h4>
+                            <div class="row g-3" id="locationGallery">
+                                <!-- JavaScript سيقوم بتحميل الصور هنا -->
+                            </div>
+                        </div>
+                        
+                        <!-- أزرار الإجراءات -->
+                        <div class="event-actions mb-5">
+                            <button class="btn btn-primary btn-lg me-3" onclick="addToCalendar()" data-translate="addToCalendar">
+                                <i class="fas fa-calendar-plus me-2"></i>أضف إلى التقويم
+                            </button>
+                            <button class="btn btn-outline-primary btn-lg me-3" onclick="shareEvent()" data-translate="share">
+                                <i class="fas fa-share-alt me-2"></i>مشاركة
+                            </button>
+                            <button class="btn btn-success btn-lg" onclick="registerForEvent()" data-translate="register">
+                                <i class="fas fa-user-plus me-2"></i>التسجيل
+                            </button>
+                        </div>
+
+                        <!-- معلومات إضافية -->
+                        <div class="additional-info mb-5">
+                            <h4 class="mb-3" data-translate="additionalInfo">معلومات إضافية</h4>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-clock text-primary me-2"></i> <strong data-translate="duration">المدة:</strong> <span id="eventDuration">3 ساعات</span></li>
+                                        <li class="mb-2"><i class="fas fa-ticket text-primary me-2"></i> <strong data-translate="ticketType">نوع التذكرة:</strong> <span id="eventTicketType">مجانية</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="mb-2"><i class="fas fa-language text-primary me-2"></i> <strong data-translate="language">اللغة:</strong> <span id="eventLanguage">العربية</span></li>
+                                        <li class="mb-2"><i class="fas fa-wheelchair text-primary me-2"></i> <strong data-translate="accessibility">ملائمة لذوي الاحتياجات:</strong> <span id="eventAccessibility">نعم</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- الشريط الجانبي -->
+                <div class="col-lg-4">
+                    <div class="sidebar-card p-4 rounded shadow mb-4">
+                        <h4 class="mb-4" data-translate="quickInfo">معلومات سريعة</h4>
+                        
+                        <!-- التصنيف -->
+                        <div class="mb-4">
+                            <h6 data-translate="category">التصنيف</h6>
+                            <span id="eventCategoryBadge" class="badge bg-primary fs-6">جاري التحميل...</span>
+                        </div>
+
+                        <!-- حالة الفعالية -->
+                        <div class="mb-4">
+                            <h6 data-translate="eventStatus">حالة الفعالية</h6>
+                            <span id="eventStatus" class="badge bg-success fs-6" data-translate="upcoming">قادمة</span>
+                        </div>
+                        
+                        <!-- عدد الأيام المتبقية -->
+                        <div class="mb-4">
+                            <h6 data-translate="daysRemaining">الأيام المتبقية</h6>
+                            <div id="daysRemaining" class="fs-4 text-primary fw-bold">--</div>
+                        </div>
+
+                        <!-- منظم الفعالية -->
+                        <div class="mb-4">
+                            <h6 data-translate="organizer">المنظم</h6>
+                            <p class="mb-1" id="eventOrganizer">بلدية دمشق</p>
+                            <small class="text-muted" id="eventContact">info@damascus.gov.sy</small>
+                        </div>
+                    </div>
+
+                    <!-- الفعاليات المشابهة -->
+                    <div class="sidebar-card p-4 rounded shadow">
+                        <h6 class="mb-3" data-translate="similarEvents">فعاليات مشابهة</h6>
+                        <div id="similarEventsList">
+                            جاري تحميل الفعاليات المشابهة...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- مودال Bootstrap لعرض الصور -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalTitle">صورة الموقع</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" alt="" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- التذييل -->
+    <footer class="footer bg-dark text-light pt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand mb-3">
+                        <div class="logo-container me-2">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <span class="brand-text" data-translate="siteTitle">دليل فعاليات المدينة</span>
+                    </div>
+                    <p class="footer-description" data-translate="platformDescription">
+                        منصة شاملة لاكتشاف واستكشاف الفعاليات والأنشطة في مدينتك. نحن نعمل على جمع كل الفعاليات في مكان واحد لتسهيل عملية البحث والمشاركة.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 data-translate="quickLinks">روابط سريعة</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" data-translate="home">الرئيسية</a></li>
+                        <li><a href="events.html" data-translate="events">الفعاليات</a></li>
+                        <li><a href="about.html" data-translate="about">عن الدليل</a></li>
+                        <li><a href="contact.html" data-translate="contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 data-translate="categories">التصنيفات</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="events.html?category=موسيقى" data-translate="music">موسيقى</a></li>
+                        <li><a href="events.html?category=رياضة" data-translate="sports">رياضة</a></li>
+                        <li><a href="events.html?category=طعام" data-translate="food">طعام</a></li>
+                        <li><a href="events.html?category=فنون" data-translate="arts">فنون</a></li>
+                        <li><a href="events.html?category=ثقافة" data-translate="culture">ثقافة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 data-translate="contactInfo">معلومات الاتصال</h5>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="fas fa-map-marker-alt me-2"></i><span data-translate="damascusSyria">دمشق، سوريا</span></li>
+                        <li><i class="fas fa-phone me-2"></i>+963 11 123 4567</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@damascusevents.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0" data-translate="rightsReserved">© 2024 دليل فعاليات دمشق. جميع الحقوق محفوظة.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" data-translate="privacyPolicy">سياسة الخصوصية</a></li>
+                        <li class="list-inline-item"><a href="#" data-translate="termsOfUse">شروط الاستخدام</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript الرئيسي -->
+    <script src="main.js"></script>
+</body>
+</html>
